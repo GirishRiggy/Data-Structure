@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         print("Input elements  : \(treeElements)")
         
         //Binary Search Tree object initiaization
-        let bstObj : CustomBST = CustomBST()
+        let bstObj = CustomBST()
         
         //Insert elements to the tree
         for index in (0..<treeElements.count) {
@@ -36,6 +36,12 @@ class ViewController: UIViewController {
         
         print("\nSearch : 53")
         bstObj.search(element: 53)
+        
+        print("\nSearch : 667")
+        bstObj.search(element: 667)
+        
+        print("\ndelete : 667")
+        bstObj.delete(element: 667)
         
         print("\nSearch : 667")
         bstObj.search(element: 667)

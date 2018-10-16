@@ -122,7 +122,47 @@ class CustomBST : AbstractDS {
     
     //Deletion
     func delete(element: NSInteger) {
-        
+        root = deleteElement(node: root, element: element)
     }
     
+    func deleteElement(node: BSTNode?, element: NSInteger) -> BSTNode? {
+        
+        //If root is null return root
+        if node == nil {
+            return nil
+        }
+        
+        //If element is less than current node data, traverse left
+        //If element is larger than current node, traverse right
+
+        if element < (node?.data)! {
+            node?.left = deleteElement(node: node?.left, element: element)
+        }else if element > (node?.data)! {
+            node?.right = deleteElement(node: node?.right, element: element)
+        }else {
+            //delete the element
+            if (node?.left) == nil {
+                return node?.right
+            }else if (node?.right) == nil {
+                return node?.left
+            }
+            
+            node?.data = minValue(node: node?.right)
+            node?.right = deleteElement(node: node?.right, element: (node?.data)!)
+        }
+        return node
+    }
+    
+    func minValue(node: BSTNode?) -> NSInteger {
+        
+        var temp = node
+        var val = (node?.data)!
+        
+        while let left = temp?.left {
+            val = (node?.data)!
+            temp = left
+        }
+        
+        return val
+    }
 }
