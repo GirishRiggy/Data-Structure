@@ -77,53 +77,16 @@ class CustomBST : AbstractDS {
         }
     }
     
-    func searchElement(node: BSTNode?,element: NSInteger) -> BSTNode? {
-        
-        let temp = node
-        
-        if temp != nil && (temp?.data)! == element {
-            return temp
-        } else if temp != nil && (temp?.data)! > element {
-            return searchElement(node: temp?.left, element: element)
-        } else if temp != nil && (temp?.data)! < element {
-            return searchElement(node: temp?.right, element: element)
-        }
-        
-        return nil
-    }
-    
     //Insertion
     func insert(element: NSInteger) {
         root = insertElement(rootElement: root, element: element)
-    }
-    
-    func insertElement(rootElement : BSTNode?,element: NSInteger) -> BSTNode {
-        
-        if let rootNode = rootElement {
-            let value = rootNode.data
-            if  element < value {
-                let elm = rootNode.left;
-                rootNode.left = insertElement(rootElement: elm,element: element)
-            } else if element > value{
-                let elm = rootNode.right;
-                rootNode.right = insertElement(rootElement: elm, element: element)
-            }
-            
-            return rootNode
-            
-        } else {
-            let rootEle = BSTNode(element)
-            rootEle.left =  nil
-            rootEle.right = nil
-            
-            return rootEle
-        }
     }
     
     //Deletion
     func delete(element: NSInteger) {
         root = deleteElement(node: root, element: element)
     }
+    
     
     func deleteElement(node: BSTNode?, element: NSInteger) -> BSTNode? {
         
@@ -153,16 +116,52 @@ class CustomBST : AbstractDS {
         return node
     }
     
+    func searchElement(node: BSTNode?,element: NSInteger) -> BSTNode? {
+        
+        let temp = node
+        
+        if temp != nil && (temp?.data)! == element {
+            return temp
+        } else if temp != nil && (temp?.data)! > element {
+            return searchElement(node: temp?.left, element: element)
+        } else if temp != nil && (temp?.data)! < element {
+            return searchElement(node: temp?.right, element: element)
+        }
+        
+        return nil
+    }
+    
+    func insertElement(rootElement : BSTNode?,element: NSInteger) -> BSTNode {
+        
+        if let rootNode = rootElement {
+            let value = rootNode.data
+            if  element < value {
+                let elm = rootNode.left;
+                rootNode.left = insertElement(rootElement: elm,element: element)
+            } else if element > value{
+                let elm = rootNode.right;
+                rootNode.right = insertElement(rootElement: elm, element: element)
+            }
+            
+            return rootNode
+            
+        } else {
+            let rootEle = BSTNode(element)
+            rootEle.left =  nil
+            rootEle.right = nil
+            
+            return rootEle
+        }
+    }
+    
     func minValue(node: BSTNode?) -> NSInteger {
         
         var temp = node
         var val = (node?.data)!
-        
         while let left = temp?.left {
             val = (node?.data)!
             temp = left
         }
-        
         return val
     }
 }

@@ -17,34 +17,56 @@ class ViewController: UIViewController {
         let treeElements = [4,33,53,134,1,2,433,600,132,42,667]
         print("Input elements  : \(treeElements)")
         
-        //Binary Search Tree object initiaization
-        let bstObj = CustomBST()
+        let btObj = CustomBT()
         
         //Insert elements to the tree
         for index in (0..<treeElements.count) {
-            bstObj.insert(element: treeElements[index])
+            btObj.insert(element: treeElements[index])
         }
         
         print("\nInorder :")
-        bstObj.inorder(node: bstObj.root!)
+        btObj.inorder(btObj.root)
         
         print("\nPreorder :")
-        bstObj.preorder(node: bstObj.root!)
+        btObj.preorder(btObj.root)
         
         print("\nPostorder :")
-        bstObj.postorder(node: bstObj.root!)
+        btObj.postorder(btObj.root)
         
         print("\nSearch : 53")
-        bstObj.search(element: 53)
+        btObj.search(element: 53)
         
-        print("\nSearch : 667")
-        bstObj.search(element: 667)
+        print("\nSearch : 100")
+        btObj.search(element: 100)
         
-        print("\ndelete : 667")
-        bstObj.delete(element: 667)
+//      Binary Search Tree object initiaization
+//      let bstObj = CustomBST()
         
-        print("\nSearch : 667")
-        bstObj.search(element: 667)
+//      Insert elements to the tree
+//        for index in (0..<treeElements.count) {
+//            bstObj.insert(element: treeElements[index])
+//        }
+//
+//        print("\nInorder :")
+//        bstObj.inorder(node: bstObj.root!)
+//
+//        print("\nPreorder :")
+//        bstObj.preorder(node: bstObj.root!)
+//
+//        print("\nPostorder :")
+//        bstObj.postorder(node: bstObj.root!)
+//
+//        print("\nSearch : 53")
+//        bstObj.search(element: 53)
+//
+//        print("\nSearch : 667")
+//        bstObj.search(element: 667)
+//
+//        print("\ndelete : 667")
+//        bstObj.delete(element: 667)
+//
+//        print("\nSearch : 667")
+//        bstObj.search(element: 667)
         
     }
 }
