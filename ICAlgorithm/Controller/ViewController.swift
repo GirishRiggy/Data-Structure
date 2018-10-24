@@ -17,9 +17,12 @@ class ViewController: UIViewController {
         let arrayElements = [4,33,53,134,1,2,433,4,2,4,1,600,132,42,667,4]
         print("Input elements  : \(arrayElements)")
         
-        //Remove Duplicate elements
-        let deObj = ArrayOperation(desc: "Array Operation", array: arrayElements)
-        print(deObj.removeDuplicate())
+        //Remove Duplicate elements. Init Array
+        let arrayOperationObj = ArrayOperation(desc: "Array Operation", array: arrayElements)
+        
+        //Retrieve remove operation
+        let removeDuplicateOperation = arrayOperationObj.performOperation(type: .OperationTypeRemoveDuplicateElements)
+        print(removeDuplicateOperation())
     }
 }
 
