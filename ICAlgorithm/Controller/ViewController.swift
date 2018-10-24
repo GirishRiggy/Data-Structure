@@ -13,61 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Input for Binary search tree
-        let treeElements = [4,33,53,134,1,2,433,600,132,42,667]
-        print("Input elements  : \(treeElements)")
+        //Input for Array with duplicate elements
+        let arrayElements = [4,33,53,134,1,2,433,4,2,4,1,600,132,42,667,4]
+        print("Input elements  : \(arrayElements)")
         
-        let btObj = CustomBT()
-        
-        //Insert elements to the tree
-        for index in (0..<treeElements.count) {
-            btObj.insert(element: treeElements[index])
-        }
-        
-        print("\nInorder :")
-        btObj.inorder(btObj.root)
-        
-        print("\nPreorder :")
-        btObj.preorder(btObj.root)
-        
-        print("\nPostorder :")
-        btObj.postorder(btObj.root)
-        
-        print("\nSearch : 53")
-        btObj.search(element: 53)
-        
-        print("\nSearch : 100")
-        btObj.search(element: 100)
-        
-//      Binary Search Tree object initiaization
-//      let bstObj = CustomBST()
-        
-//      Insert elements to the tree
-//        for index in (0..<treeElements.count) {
-//            bstObj.insert(element: treeElements[index])
-//        }
-//
-//        print("\nInorder :")
-//        bstObj.inorder(node: bstObj.root!)
-//
-//        print("\nPreorder :")
-//        bstObj.preorder(node: bstObj.root!)
-//
-//        print("\nPostorder :")
-//        bstObj.postorder(node: bstObj.root!)
-//
-//        print("\nSearch : 53")
-//        bstObj.search(element: 53)
-//
-//        print("\nSearch : 667")
-//        bstObj.search(element: 667)
-//
-//        print("\ndelete : 667")
-//        bstObj.delete(element: 667)
-//
-//        print("\nSearch : 667")
-//        bstObj.search(element: 667)
-        
+        //Remove Duplicate elements
+        let deObj = ArrayOperation(desc: "Array Operation", array: arrayElements)
+        print(deObj.removeDuplicate())
     }
 }
 
