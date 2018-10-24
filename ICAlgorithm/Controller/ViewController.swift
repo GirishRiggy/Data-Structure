@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         //Remove Duplicate elements. Init Array
         let arrayOperationObj = ArrayOperation(desc: "Array Operation", array: arrayElements)
         
+        //Remove Duplicate elements
+        let removeDuplicateElements = arrayOperationObj.performOperation(type: arrayOperationObj.removeDuplicate)
+        print(removeDuplicateElements)
+        
         //Retrieve remove operation
         let removeDuplicateOperation = arrayOperationObj.performOperation(type: .OperationTypeRemoveDuplicateElements)
         print(removeDuplicateOperation())

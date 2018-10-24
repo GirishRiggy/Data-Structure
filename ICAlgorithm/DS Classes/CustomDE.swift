@@ -37,6 +37,10 @@ class ArrayOperation {
         }
     }
     
+    func performOperation(type: () -> [Int]) -> [Int] {
+        return type();
+    }
+    
     func removeDuplicate() -> [Int] {
         
         var sortedArray = sortArray(array: array)
